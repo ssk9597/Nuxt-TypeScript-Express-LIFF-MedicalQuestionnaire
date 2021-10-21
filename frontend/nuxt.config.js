@@ -1,6 +1,3 @@
-require('dotenv').config();
-const { API_URL, API_URL_BROWSER } = process.env;
-
 export default {
   head: {
     title: 'オンライン問診票',
@@ -34,21 +31,7 @@ export default {
     },
   },
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/proxy', '@nuxtjs/dotenv'],
-
-  env: {
-    API_URL,
-    API_URL_BROWSER,
-  },
-
-  proxy: {
-    '/api': process.env.API_URL,
-  },
-
-  axios: {
-    baseURL: process.env.API_URL,
-    browserBaseURL: process.env.API_URL_BROWSER,
-  },
+  modules: ['@nuxtjs/axios'],
 
   build: {},
 };
