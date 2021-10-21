@@ -12,13 +12,10 @@
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/composition-api": "^0.29.3",
     "core-js": "^3.9.1",
-    "css-wipe": "^4.3.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.1"
+    "@nuxt/typescript-build": "^2.1.0"
   }
 }
