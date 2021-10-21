@@ -3,7 +3,7 @@ const { API_URL, API_URL_BROWSER } = process.env;
 
 export default {
   head: {
-    title: 'frontend',
+    title: 'オンライン問診票',
     htmlAttrs: {
       lang: 'ja',
     },
@@ -13,6 +13,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
   },
 
   css: [],
