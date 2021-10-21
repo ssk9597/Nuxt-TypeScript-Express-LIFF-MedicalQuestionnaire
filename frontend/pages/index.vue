@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>
-      {{ data }}
-    </h1>
+    <h1>こんにちは</h1>
   </div>
 </template>
 
@@ -11,14 +9,6 @@ import { defineComponent, ref, useAsync, useContext } from '@nuxtjs/composition-
 import axios from '@nuxtjs/axios';
 
 export default defineComponent({
-  setup() {
-    const data = ref({});
-    const { $axios } = useContext();
-    useAsync(async () => {
-      const result = await $axios.$get('/api');
-      data.value = result;
-    });
-    return { data };
-  },
+  setup() {},
 });
 </script>
