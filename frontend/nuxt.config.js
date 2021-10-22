@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'frontend',
+    title: 'ミズオンライン問診票',
     htmlAttrs: {
       lang: 'ja',
     },
