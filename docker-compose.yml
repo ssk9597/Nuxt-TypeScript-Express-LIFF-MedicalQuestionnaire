@@ -12,6 +12,5 @@ services:
       - ./app/node_modules
     ports:
       - $FRONT_PORT:3000
-      - $STORYBOOK_PORT:6006
     init: true
     restart: on-failure
