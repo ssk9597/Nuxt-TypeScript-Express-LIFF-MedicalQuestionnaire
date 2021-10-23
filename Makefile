@@ -17,3 +17,4 @@ nuxt:
 	docker-compose exec front npm install --save @nuxtjs/dotenv
 	docker-compose exec front touch .env
 	docker-compose exec front npm install sass-loader@10.1.1 sass --save-dev
+	docker-compose exec front npm install css-wipe --save
