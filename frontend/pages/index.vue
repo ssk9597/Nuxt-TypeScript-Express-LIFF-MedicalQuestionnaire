@@ -12,11 +12,9 @@ export default defineComponent({
   setup() {
     //data
     onMounted(async () => {
-      if (process.browser) {
-        await liff.init({
-          liffId: '1656555015-5vozv1mV',
-        });
-      }
+      await liff.init({
+        liffId: '1656555015-5vozv1mV',
+      });
     });
   },
 });
