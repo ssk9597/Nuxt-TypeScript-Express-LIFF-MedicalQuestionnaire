@@ -2,6 +2,7 @@ require('dotenv').config();
 const { LIFF_ID, LIFF_CHANNEL_ID } = process.env;
 
 export default {
+  target: 'static',
   head: {
     title: 'ミズオンライン問診票',
     htmlAttrs: {
