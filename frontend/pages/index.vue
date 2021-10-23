@@ -8,10 +8,6 @@
 import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api';
 import liff from '@line/liff';
 
-if (process.browser) {
-  require('@line/liff');
-}
-
 export default defineComponent({
   setup() {
     //data
