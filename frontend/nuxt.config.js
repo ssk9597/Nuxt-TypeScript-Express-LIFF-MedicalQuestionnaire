@@ -17,7 +17,11 @@ export default {
     script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
   },
 
-  css: [],
+  css: [{ src: '@/assets/styles/style.scss', lang: 'scss' }],
+
+  styleResources: {
+    scss: ['@/assets/styles/style.scss'],
+  },
 
   plugins: [],
 
@@ -25,7 +29,13 @@ export default {
 
   buildModules: [],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv'],
+  watchers: {
+    webpack: {
+      poll: true,
+    },
+  },
+
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources'],
 
   env: {
     LIFF_CHANNEL_ID,

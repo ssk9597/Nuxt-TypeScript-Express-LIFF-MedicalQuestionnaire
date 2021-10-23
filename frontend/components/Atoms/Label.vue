@@ -24,8 +24,8 @@ export default {
     width: 50px;
     height: 20px;
     border-radius: 15px;
-    background: #2f9447;
-    color: #fff;
+    background: $color_green;
+    color: $color_white;
     font-size: 12px;
     font-weight: bold;
   }
