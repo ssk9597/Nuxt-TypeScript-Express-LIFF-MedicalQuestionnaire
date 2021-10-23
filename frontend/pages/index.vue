@@ -6,18 +6,11 @@ import liff from '@line/liff';
 
 export default defineComponent({
   setup() {
-    // data
-    const liffId = ref<string>(process.env.LIFF_ID || '');
-
     onMounted(async () => {
       await liff.init({
-        liffId: liffId,
+        liffId: process.env.LIFF_ID,
       });
     });
-
-    return {
-      liffId,
-    };
   },
 });
 </script>
