@@ -8,15 +8,17 @@
 import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api';
 import liff from '@line/liff';
 
+if (process.browser) {
+  require('@line/liff');
+}
+
 export default defineComponent({
   setup() {
     //data
     onMounted(async () => {
-      if (process.browser) {
-        await liff.init({
-          liffId: '1656555015-5vozv1mV',
-        });
-      }
+      await liff.init({
+        liffId: '1656555015-5vozv1mV',
+      });
     });
   },
 });
