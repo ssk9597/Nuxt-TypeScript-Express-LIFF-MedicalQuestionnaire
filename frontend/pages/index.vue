@@ -10,9 +10,13 @@ export default defineComponent({
     const liffId = ref<string | undefined>(process.env.LIFF_ID || '');
 
     onMounted(async () => {
-      await liff.init({
-        liffId: liffId as string,
-      });
+      if (liffId === undefined) {
+        return;
+      } else {
+        await liff.init({
+          liffId: liffId,
+        });
+      }
     });
 
     return {
