@@ -11,7 +11,7 @@ export default defineComponent({
 
     onMounted(async () => {
       await liff.init({
-        liffId: liffId,
+        liffId: liffId as string,
       });
     });
 
