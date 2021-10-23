@@ -2,7 +2,7 @@ require('dotenv').config();
 const { LIFF_CHANNEL_ID, LIFF_ID } = process.env;
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
     title: 'ミズオンライン問診票',
     htmlAttrs: {
