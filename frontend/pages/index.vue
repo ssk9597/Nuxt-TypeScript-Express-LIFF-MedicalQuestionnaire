@@ -1,16 +1,23 @@
 <template></template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from '@nuxtjs/composition-api';
+import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api';
 import liff from '@line/liff';
 
 export default defineComponent({
   setup() {
+    // data
+    const liffId = ref<string | undefined>(process.env.LIFF_ID || undefined);
+
     onMounted(async () => {
       await liff.init({
-        liffId: process.env.LIFF_ID || undefined,
+        liffId: liffId,
       });
     });
+
+    return {
+      liffId,
+    };
   },
 });
 </script>
