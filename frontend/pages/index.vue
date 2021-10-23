@@ -1,4 +1,8 @@
-<template></template>
+<template>
+  <div>
+    {{ data }}
+  </div>
+</template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api';
@@ -6,11 +10,17 @@ import liff from '@line/liff';
 
 export default defineComponent({
   setup() {
+    //data
+    const data = ref<string>(process.env.LIFF_ID);
     onMounted(async () => {
       await liff.init({
-        liffId: process.env.LIFF_ID,
+        liffId: '1656555015-5vozv1mV',
       });
     });
+
+    return {
+      data,
+    };
   },
 });
 </script>
