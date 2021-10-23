@@ -1,4 +1,8 @@
-<template> </template>
+<template>
+  <div>
+    <h2>Test</h2>
+  </div>
+</template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api';
