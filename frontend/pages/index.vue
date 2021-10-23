@@ -8,7 +8,7 @@ export default defineComponent({
   setup() {
     onMounted(async () => {
       await liff.init({
-        liffId: process.env.LIFF_ID,
+        liffId: process.env.LIFF_ID || undefined,
       });
     });
   },
