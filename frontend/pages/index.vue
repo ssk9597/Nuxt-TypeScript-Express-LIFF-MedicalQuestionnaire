@@ -2,6 +2,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from '@nuxtjs/composition-api';
+import liff from '@line/liff';
 
 export default defineComponent({
   setup() {
