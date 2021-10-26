@@ -7,7 +7,7 @@
         fontSize: fontSize,
         maxWidth: maxWidth,
       }"
-      @click="childClick"
+      @click="grandChildClick"
     >
       {{ buttonText }}
     </button>
@@ -33,14 +33,10 @@ export default {
       type: String,
       required: true,
     },
-    click: {
-      type: Function,
-      required: true,
-    },
   },
   methods: {
-    childClick() {
-      this.click();
+    grandChildClick() {
+      this.$emit('childClick');
     },
   },
 };

@@ -13,6 +13,7 @@
         class="radio-wrapper-label"
         :for="option"
         :class="[option === chooseVal ? 'checked' : '']"
+        :style="{ width: width }"
       >
         {{ option }}
       </label>
@@ -30,6 +31,10 @@ export default {
     default: {
       type: String,
       required: true,
+    },
+    width: {
+      type: String,
+      default: '120px',
     },
   },
   data() {
@@ -56,7 +61,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 120px;
+      // width: 100px;
       height: 35px;
       border-radius: 15px;
       background: $color_white;

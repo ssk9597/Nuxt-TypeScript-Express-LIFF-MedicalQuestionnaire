@@ -36,7 +36,7 @@ export default {
       content: '\f078';
       font-weight: 900;
       font-family: 'Font Awesome 5 Free';
-      line-height: 50px;
+      line-height: 40px;
       color: $color_white;
       pointer-events: none;
     }
@@ -45,7 +45,7 @@ export default {
     z-index: 1;
     appearance: none;
     width: 100%;
-    height: 50px;
+    height: 40px;
     background: $color_green;
     color: $color_white;
     border: none;

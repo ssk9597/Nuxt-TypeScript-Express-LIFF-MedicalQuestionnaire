@@ -3,6 +3,7 @@
     <input
       class="form-input"
       :type="type"
+      :inputmode="inputmode"
       :placeholder="placeholder"
       :value="value"
       @input="$emit('input', $event.target.value)"
@@ -17,9 +18,13 @@ export default {
       type: String,
       default: 'text',
     },
+    inputmode: {
+      type: String,
+      default: 'text',
+    },
     placeholder: {
       type: String,
-      required: true,
+      default: '',
     },
     value: {
       type: String,
@@ -34,7 +39,6 @@ export default {
   display: block;
   width: 100%;
   padding: 10px 10px;
-  margin: 10px 0;
   color: $color_black;
   border: solid 1px $background_gray;
   border-radius: 6px;
