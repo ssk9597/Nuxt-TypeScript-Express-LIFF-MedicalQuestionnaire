@@ -257,9 +257,14 @@ export default {
 
       this.address1 =
         address.results[0].address1 + address.results[0].address2 + address.results[0].address3;
-      alert(this.address1);
     },
     async clickRegister() {
+      await liff.sendMessages([
+        {
+          type: 'text',
+          text: 'お問い合わせありがとうございます。',
+        },
+      ]);
       // await liff.sendMessaages([
       //   {
       //     type: 'bubble',
