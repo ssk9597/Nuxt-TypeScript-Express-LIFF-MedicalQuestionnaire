@@ -262,407 +262,409 @@ export default {
     },
     async clickRegister() {
       alert('TEST');
-      await liff.sendMessaages({
-        type: 'bubble',
-        body: {
-          type: 'box',
-          layout: 'vertical',
-          contents: [
-            {
-              type: 'text',
-              text: '問診票へのご記入ありがとうございます',
-              weight: 'bold',
-              color: '#1DB446',
-              size: 'xs',
+      await liff.sendMessaages([
+        {
+          type: 'bubble',
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: '問診票へのご記入ありがとうございます',
+                weight: 'bold',
+                color: '#1DB446',
+                size: 'xs',
+              },
+              {
+                type: 'text',
+                text: '溝上薬局 〇〇店',
+                weight: 'bold',
+                size: 'xxl',
+                margin: 'md',
+              },
+              {
+                type: 'text',
+                text: '佐賀県佐賀市水ヶ江1丁目1番11号',
+                size: 'xs',
+                color: '#aaaaaa',
+                wrap: true,
+              },
+              {
+                type: 'separator',
+                margin: 'xxl',
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                margin: 'xxl',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '姓',
+                        size: 'sm',
+                        color: '#555555',
+                        flex: 0,
+                      },
+                      {
+                        type: 'text',
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'end',
+                        text: this.firstName,
+                      },
+                    ],
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '名',
+                        size: 'sm',
+                        color: '#555555',
+                        flex: 0,
+                      },
+                      {
+                        type: 'text',
+                        text: this.lastName,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'end',
+                      },
+                    ],
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '住所1',
+                        size: 'sm',
+                        color: '#555555',
+                        flex: 0,
+                      },
+                      {
+                        type: 'text',
+                        text: this.address1,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'end',
+                      },
+                    ],
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '住所2',
+                        size: 'sm',
+                        color: '#555555',
+                        flex: 0,
+                      },
+                      {
+                        type: 'text',
+                        text: this.address2,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'end',
+                      },
+                    ],
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    margin: 'xxl',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '受診理由について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.reasonVisit,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                        margin: 'none',
+                      },
+                    ],
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '現在服用中のお薬について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isMedicine,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '治療中・過去に治療した病気について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.selectDisease,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'その他の病気について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                        text: this.otherReasons,
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '飲酒について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isAlcohol,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'タバコについて',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isCigarettes,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '1日あたりタバコの本数について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.selectCigarettes,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '車の運転について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isDrive,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '日常生活について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.selectDailyLife,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '妊娠について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isPregnancy,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '妊娠経過週について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.selectPregnancyElapsed,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '授乳中について',
+                        size: 'sm',
+                        color: '#555555',
+                      },
+                      {
+                        type: 'text',
+                        text: this.isBreastFeeding,
+                        size: 'sm',
+                        color: '#111111',
+                        align: 'start',
+                      },
+                    ],
+                    margin: 'lg',
+                  },
+                ],
+              },
+              {
+                type: 'separator',
+                margin: 'xxl',
+              },
+              {
+                type: 'box',
+                layout: 'horizontal',
+                margin: 'md',
+                contents: [
+                  {
+                    type: 'text',
+                    text: 'お客様ID',
+                    size: 'xs',
+                    color: '#aaaaaa',
+                    flex: 0,
+                  },
+                  {
+                    type: 'text',
+                    text: '#743289384279',
+                    color: '#aaaaaa',
+                    size: 'xs',
+                    align: 'end',
+                  },
+                ],
+              },
+            ],
+          },
+          styles: {
+            footer: {
+              separator: true,
             },
-            {
-              type: 'text',
-              text: '溝上薬局 〇〇店',
-              weight: 'bold',
-              size: 'xxl',
-              margin: 'md',
-            },
-            {
-              type: 'text',
-              text: '佐賀県佐賀市水ヶ江1丁目1番11号',
-              size: 'xs',
-              color: '#aaaaaa',
-              wrap: true,
-            },
-            {
-              type: 'separator',
-              margin: 'xxl',
-            },
-            {
-              type: 'box',
-              layout: 'vertical',
-              margin: 'xxl',
-              spacing: 'sm',
-              contents: [
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '姓',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                    },
-                    {
-                      type: 'text',
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'end',
-                      text: this.firstName,
-                    },
-                  ],
-                },
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '名',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                    },
-                    {
-                      type: 'text',
-                      text: this.lastName,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'end',
-                    },
-                  ],
-                },
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '住所1',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                    },
-                    {
-                      type: 'text',
-                      text: this.address1,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'end',
-                    },
-                  ],
-                },
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '住所2',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                    },
-                    {
-                      type: 'text',
-                      text: this.address2,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'end',
-                    },
-                  ],
-                },
-                {
-                  type: 'separator',
-                  margin: 'xxl',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  margin: 'xxl',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '受診理由について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.reasonVisit,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                      margin: 'none',
-                    },
-                  ],
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '現在服用中のお薬について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isMedicine,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '治療中・過去に治療した病気について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.selectDisease,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: 'その他の病気について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                      text: this.otherReasons,
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'separator',
-                  margin: 'xxl',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '飲酒について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isAlcohol,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: 'タバコについて',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isCigarettes,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '1日あたりタバコの本数について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.selectCigarettes,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '車の運転について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isDrive,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '日常生活について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.selectDailyLife,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '妊娠について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isPregnancy,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '妊娠経過週について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.selectPregnancyElapsed,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '授乳中について',
-                      size: 'sm',
-                      color: '#555555',
-                    },
-                    {
-                      type: 'text',
-                      text: this.isBreastFeeding,
-                      size: 'sm',
-                      color: '#111111',
-                      align: 'start',
-                    },
-                  ],
-                  margin: 'lg',
-                },
-              ],
-            },
-            {
-              type: 'separator',
-              margin: 'xxl',
-            },
-            {
-              type: 'box',
-              layout: 'horizontal',
-              margin: 'md',
-              contents: [
-                {
-                  type: 'text',
-                  text: 'お客様ID',
-                  size: 'xs',
-                  color: '#aaaaaa',
-                  flex: 0,
-                },
-                {
-                  type: 'text',
-                  text: '#743289384279',
-                  color: '#aaaaaa',
-                  size: 'xs',
-                  align: 'end',
-                },
-              ],
-            },
-          ],
-        },
-        styles: {
-          footer: {
-            separator: true,
           },
         },
-      });
+      ]);
       await liff.closeWindow();
     },
   },
