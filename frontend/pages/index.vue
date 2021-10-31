@@ -252,7 +252,7 @@ export default {
   },
   methods: {
     async clickAddress() {
-      const url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode=';
+      const url = 'https://zipcloud.ibsnet.co.jp/api/search?zipcode=';
 
       const address = await this.$axios.$get(url + this.zipCode);
 
