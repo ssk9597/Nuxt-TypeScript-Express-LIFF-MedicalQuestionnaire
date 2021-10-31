@@ -61,7 +61,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      // width: 100px;
+      cursor: pointer;
       height: 35px;
       border-radius: 15px;
       background: $color_white;
