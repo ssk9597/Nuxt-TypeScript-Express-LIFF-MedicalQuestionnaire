@@ -661,6 +661,7 @@ export default {
           },
         },
       });
+      await liff.closeWindow();
     },
   },
 };
