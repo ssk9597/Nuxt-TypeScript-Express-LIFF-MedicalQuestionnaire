@@ -252,6 +252,7 @@ export default {
   },
   methods: {
     async clickAddress() {
+      alert('OK');
       const url = 'https://zipcloud.ibsnet.co.jp/api/search?zipcode=';
 
       const address = await this.$axios.$get(url + this.zipCode);
@@ -260,6 +261,7 @@ export default {
         address.results[0].address1 + address.results[0].address2 + address.results[0].address3;
     },
     async clickRegister() {
+      alert('TEST');
       await liff.sendMessaages({
         type: 'bubble',
         body: {
