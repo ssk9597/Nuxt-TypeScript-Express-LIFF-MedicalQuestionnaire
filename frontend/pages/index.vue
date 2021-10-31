@@ -259,10 +259,22 @@ export default {
         address.results[0].address1 + address.results[0].address2 + address.results[0].address3;
     },
     async clickRegister() {
-      await liff.sendMessages([
+      await liff.sendMessaages([
         {
-          type: 'text',
-          text: 'お問い合わせありがとうございます。',
+          type: 'bubble',
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: '問診票へのご記入ありがとうございます',
+                weight: 'bold',
+                color: '#1DB446',
+                size: 'xs',
+              },
+            ],
+          },
         },
       ]);
       // await liff.sendMessaages([
