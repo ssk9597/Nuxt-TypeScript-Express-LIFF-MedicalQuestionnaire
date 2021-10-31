@@ -36,7 +36,7 @@ export default {
       content: '\f078';
       font-weight: 900;
       font-family: 'Font Awesome 5 Free';
-      line-height: 40px;
+      line-height: 30px;
       color: $color_white;
       pointer-events: none;
     }
@@ -45,12 +45,13 @@ export default {
     z-index: 1;
     appearance: none;
     width: 100%;
-    height: 40px;
+    height: 30px;
+    border-radius: 5px;
     background: $color_green;
     color: $color_white;
     border: none;
     padding: 0px 10px;
-    font-size: 15px;
+    font-size: 14px;
 
     &:focus {
       outline: none;
