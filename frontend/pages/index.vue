@@ -252,6 +252,28 @@ export default {
       alert(this.address1);
     },
     async clickRegister() {
+      await liff.sendMessages([
+        {
+          type: 'text',
+          text: `
+            お問い合わせありがとうございます。\n\n
+            姓：${this.firstName}\n
+            名：${this.lastName}\n
+            住所：${this.address1} ${this.address2}\n
+            受診理由：${this.reasonVisit}\n
+            服用中のお薬：${this.isMedicine}\n
+            治療中の病気：${this.selectDisease}\n
+            その他の病気：${this.otherReasons}\n
+            飲酒：${this.isAlcohol}\n
+            タバコ：${this.isAlcohol}\n
+            タバコの本数：${this.selectCigarettes}\n
+            運転：${this.isDrive}\n
+            日々の生活：${this.selectDailyLife}\n
+            妊娠：${this.isPregnancy}\n
+            妊娠週：${this.selectPregnancyElapsed}
+          `,
+        },
+      ]);
       await liff.closeWindow();
     },
   },
