@@ -261,19 +261,23 @@ export default {
     async clickRegister() {
       await liff.sendMessaages([
         {
-          type: 'bubble',
-          body: {
-            type: 'box',
-            layout: 'vertical',
-            contents: [
-              {
-                type: 'text',
-                text: '問診票へのご記入ありがとうございます',
-                weight: 'bold',
-                color: '#1DB446',
-                size: 'xs',
-              },
-            ],
+          type: 'flex',
+          altText: '問診票へのご協力ありがとうございます',
+          contents: {
+            type: 'bubble',
+            body: {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  text: '問診票へのご記入ありがとうございます',
+                  weight: 'bold',
+                  color: '#1DB446',
+                  size: 'xs',
+                },
+              ],
+            },
           },
         },
       ]);
