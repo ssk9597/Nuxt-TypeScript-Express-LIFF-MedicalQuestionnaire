@@ -1,6 +1,10 @@
+require('dotenv').config();
+const { LIFF_CHANNEL_ID, LIFF_ID } = process.env;
+
 export default {
+  target: 'static',
   head: {
-    title: 'frontend',
+    title: 'ミズオンライン問診票',
     htmlAttrs: {
       lang: 'ja',
     },
@@ -9,20 +13,24 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.12.0/css/all.css' },
+    ],
+    script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
   },
 
-  css: [],
+  css: [{ src: '@/assets/styles/style.scss', lang: 'scss' }],
+
+  styleResources: {
+    scss: ['@/assets/styles/style.scss'],
+  },
 
   plugins: [],
 
   components: true,
 
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
-
-  generate: {
-    interval: 2000,
-  },
+  buildModules: [],
 
   watchers: {
     webpack: {
@@ -30,7 +38,12 @@ export default {
     },
   },
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/style-resources'],
+
+  env: {
+    LIFF_CHANNEL_ID,
+    LIFF_ID,
+  },
 
   axios: {},
 
