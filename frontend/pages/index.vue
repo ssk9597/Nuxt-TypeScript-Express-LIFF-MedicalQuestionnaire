@@ -218,7 +218,7 @@ export default {
       await liff.sendMessages([
         {
           type: 'text',
-          text: `お問い合わせありがとうございます。\n\n姓：${this.firstName}\n名：${this.lastName}\n住所：${this.address1} ${this.address2}\n受診理由：${this.reasonVisit}\n服用中のお薬：${this.isMedicine}\n治療中の病気：${this.selectDisease}\nその他の病気：${this.otherReasons}\n飲酒：${this.isAlcohol}\nタバコ：${this.isAlcohol}\nタバコの本数：${this.selectCigarettes}\n運転：${this.isDrive}\n日々の生活：${this.selectDailyLife}\n妊娠：${this.isPregnancy}\n妊娠週：${this.selectPregnancyElapsed}`,
+          text: `お問い合わせありがとうございます。\n\n姓：${this.firstName}\n名：${this.lastName}\n受診理由：${this.reasonVisit}\n服用中のお薬：${this.isMedicine}\n治療中の病気：${this.selectDisease}\nその他の病気：${this.otherReasons}\n飲酒：${this.isAlcohol}\nタバコ：${this.isAlcohol}\nタバコの本数：${this.selectCigarettes}\n運転：${this.isDrive}\n日々の生活：${this.selectDailyLife}\n妊娠：${this.isPregnancy}\n妊娠週：${this.selectPregnancyElapsed}`,
         },
       ]);
       await liff.closeWindow();
