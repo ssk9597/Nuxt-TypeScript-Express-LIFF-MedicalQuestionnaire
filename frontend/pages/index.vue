@@ -4,7 +4,7 @@
     <h1 class="heading mb-xxl">お薬を安全に服用いただくため<br />ご協力をお願いします</h1>
     <div class="form-container">
       <!-- 姓名 -->
-      <div class="name-wrapper mb-lg">
+      <div class="name-wrapper mb-xl">
         <div class="name-wrapper-content">
           <Label class="mb-sm" :labelName="'姓'" />
           <FormInput :placeholder="'例：田中'" :value="firstName" @input="firstName = $event" />
@@ -14,31 +14,6 @@
           <FormInput :placeholder="'例：太郎'" :value="lastName" @input="lastName = $event" />
         </div>
       </div>
-      <!-- 住所 -->
-      <Label class="mb-md" :labelName="'住所'" />
-      <FormQuestion class="mb-sm" :question="'郵便番号（ハイフンなし）'" />
-      <div class="address-wrapper mb-md">
-        <FormInput
-          class="address-wrapper-content"
-          :inputmode="'numeric'"
-          :placeholder="'例：8400054'"
-          :value="zipCode"
-          @input="zipCode = $event"
-        />
-        <FormButton
-          class="address-wrapper-content"
-          :backgroundColor="'#2F9447'"
-          :fontSize="'12px'"
-          :maxWidth="'120px'"
-          :buttonText="'郵便番号検索'"
-          :click="clickAddress"
-          @clickAddress="clickAddress"
-        />
-      </div>
-      <FormQuestion class="mb-sm" :question="'都道府県・市区町村・番地'" />
-      <FormInput class="mb-md" :value="address1" @input="address1 = $event" />
-      <FormQuestion class="mb-sm" :question="'建物名・号室'" />
-      <FormInput class="mb-xl" :value="address2" @input="address2 = $event" />
 
       <!-- 症状に関して -->
       <FormHeading class="mb-lg" :heading="'症状に関して'" />
@@ -225,9 +200,6 @@ export default {
       // データ
       firstName: '',
       lastName: '',
-      zipCode: '',
-      address1: '',
-      address2: '',
       reasonVisit: '',
       isMedicine: 'いいえ',
       selectDisease: '特になし',
@@ -242,15 +214,6 @@ export default {
     };
   },
   methods: {
-    async clickAddress() {
-      const url = 'https://zipcloud.ibsnet.co.jp/api/search?zipcode=';
-      const address = await this.$axios.$get(url + this.zipCode);
-
-      this.address1 =
-        address.results[0].address1 + address.results[0].address2 + address.results[0].address3;
-
-      alert(this.address1);
-    },
     async clickRegister() {
       await liff.sendMessages([
         {

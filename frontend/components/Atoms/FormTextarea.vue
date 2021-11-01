@@ -32,6 +32,7 @@ export default {
   outline: 0;
   transition: 0.3s;
   resize: none;
+  font-size: 16px;
 
   &:focus {
     border: 1px solid $color_green;

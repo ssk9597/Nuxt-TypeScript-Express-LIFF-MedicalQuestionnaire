@@ -44,6 +44,7 @@ export default {
   border-radius: 6px;
   outline: 0;
   transition: 0.3s;
+  font-size: 16px;
 
   &:focus {
     border: 1px solid $color_green;
